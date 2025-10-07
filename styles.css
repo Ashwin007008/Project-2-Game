@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-display {
+    margin-bottom: 30px;
+}
+
+.score-display p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+#score {
+    color: #667eea;
+    font-size: 2rem;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.mole-hole {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #8b5a3c, #6d4c3b);
+    border: 5px solid #5a3d2f;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mole-hole:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mole {
+    width: 80px;
+    height: 80px;
+    background: #8b4513;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease;
+}
+
+.mole::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #2c1810;
+    border-radius: 50%;
+    top: 25px;
+    left: 20px;
+}
+
+.mole::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #2c1810;
+    border-radius: 50%;
+    top: 25px;
+    right: 20px;
+}
+
+/* Active class for when mole is visible - for future JS usage */
+.mole-hole.active .mole {
+    bottom: 20px;
+}
+
+.mole-hole.active {
+    background: linear-gradient(145deg, #90ee90, #32cd32);
+    border-color: #228b22;
+}
+
+.restart-btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.restart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
